@@ -2,6 +2,47 @@
 
 > Cypress.Cookies.preserveOnce for Cypress v10
 
+## Install
+
+```shell
+# if using NPM
+$ npm i -D cypress-v10-preserve-cookie
+# if using Yarn
+$ yarn add -D cypress-v10-preserve-cookie
+```
+
+Import this module from your spec file or from your support file
+
+```js
+import 'cypress-v10-preserve-cookie'
+```
+
+This module adds a custom command `cy.preserveCookieOnce`
+
+## Use
+
+```js
+// login sets the cookie like "connect.session" for example
+before(loginSomehow)
+
+beforeEach(() => {
+  // equivalent to cy.preserveCookieOnce('connect.session')
+  cy.preserveCookieOnce('connect.session')
+})
+
+it('is logged in', () => {
+  ...
+})
+
+it('is still logged in', () => {
+  ...
+})
+```
+
+## Types
+
+Included in [src/index.d.ts](./src/index.d.ts)
+
 ## Small print
 
 Author: Gleb Bahmutov &lt;gleb.bahmutov@gmail.com&gt; &copy; 2022
