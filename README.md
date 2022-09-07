@@ -43,6 +43,18 @@ it('is still logged in', () => {
 
 Included in [src/index.d.ts](./src/index.d.ts)
 
+## Debugging
+
+This module uses [debug](https://github.com/debug-js/debug#readme) module to output verbose browser console messages when needed. To turn the logging on, open the browser's DevTools console and set the local storage entry:
+
+```js
+localStorage.debug = 'cypress-v10-preserve-cookie'
+```
+
+If you re-run the tests, you should see the messages appear in the console.
+
+![Show debug messages](./images/debug-cookie.png)
+
 ## Small print
 
 Author: Gleb Bahmutov &lt;gleb.bahmutov@gmail.com&gt; &copy; 2022

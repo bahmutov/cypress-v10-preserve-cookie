@@ -1,22 +1,29 @@
+const debug = require('debug')('cypress-v10-preserve-cookie')
+
 Cypress.Commands.add('preserveCookieOnce', (name) => {
-  expect(name, 'cookie name to preserve').to.be.a('string')
+  if (typeof name !== 'string' || !name) {
+    throw new Error('Expected the cookie name to preserve')
+  }
+  cy.log(`preserveCookieOnce **${name}**`)
+  debug('cookie name "%s"', name)
   const saveName = 'cookie_' + name
-  cy.getCookie(name)
+  cy.getCookie(name, { log: false })
+    // disable the built-in existence check
     .should(Cypress._.noop)
     .then((c) => {
       if (!c) {
-        // console.log('there is no cookie named %s', name)
+        debug('there is no cookie named %s', name)
         const previouslySaved = Cypress.env(saveName)
         if (previouslySaved) {
-          // console.log(
-          //   'setting the previously saved cookie %s %o',
-          //   name,
-          //   previouslySaved,
-          // )
-          cy.setCookie(name, previouslySaved.value)
+          debug(
+            'setting the previously saved cookie %s %o',
+            name,
+            previouslySaved,
+          )
+          cy.setCookie(name, previouslySaved.value, { log: false })
         }
       } else {
-        // console.log('saving found cookie %s %o', name, c)
+        debug('saving found cookie %s %o', name, c)
         Cypress.env(saveName, c)
       }
     })
