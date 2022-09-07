@@ -1,6 +1,6 @@
 {
   "name": "cypress-v10-preserve-cookie",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "Cypress.Cookies.preserveOnce for Cypress v10",
   "main": "src/index.js",
   "types": "src/index.d.ts",
@@ -9,11 +9,12 @@
   ],
   "scripts": {
     "test": "cypress run",
-    "badges": "npx -p dependency-version-badge update-badge cypress"
+    "badges": "npx -p dependency-version-badge update-badge cypress",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bahmutov/cypress-v10-preserve-cookie.git"
+    "url": "https://github.com/bahmutov/cypress-v10-preserve-cookie.git"
   },
   "keywords": [
     "cypress-plugin",
@@ -27,6 +28,7 @@
   "homepage": "https://github.com/bahmutov/cypress-v10-preserve-cookie#readme",
   "devDependencies": {
     "cypress": "^10.7.0",
-    "prettier": "^2.7.1"
+    "prettier": "^2.7.1",
+    "semantic-release": "^19.0.5"
   }
 }
