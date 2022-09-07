@@ -1,0 +1,11 @@
+# Node Dependencies
+node_modules
+
+# Logs
+debug.log
+
+# secrets
+# https://github.com/bahmutov/as-a
+.as-a.ini
+cypress/videos/
+cypress/screenshots/

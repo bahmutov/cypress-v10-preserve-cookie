@@ -1,0 +1,32 @@
+{
+  "name": "cypress-v10-preserve-cookie",
+  "version": "1.0.0",
+  "description": "Cypress.Cookies.preserveOnce for Cypress v10",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "test": "cypress run",
+    "badges": "npx -p dependency-version-badge update-badge cypress"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bahmutov/cypress-v10-preserve-cookie.git"
+  },
+  "keywords": [
+    "cypress-plugin",
+    "cypress-command"
+  ],
+  "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bahmutov/cypress-v10-preserve-cookie/issues"
+  },
+  "homepage": "https://github.com/bahmutov/cypress-v10-preserve-cookie#readme",
+  "devDependencies": {
+    "cypress": "^10.7.0",
+    "prettier": "^2.7.1"
+  }
+}
