@@ -61,6 +61,10 @@ If you re-run the tests, you should see the messages appear in the console.
 
 - [bahmutov/cypress-v10-preserve-cookie-example](https://github.com/bahmutov/cypress-v10-preserve-cookie-example)
 
+## See also
+
+If you need more control over storing/restoring cookies/users/any other data, check out my plugin [cypress-data-session](https://github.com/bahmutov/cypress-data-session).
+
 ## Small print
 
 Author: Gleb Bahmutov &lt;gleb.bahmutov@gmail.com&gt; &copy; 2022
