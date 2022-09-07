@@ -2,6 +2,8 @@
 
 > Cypress.Cookies.preserveOnce for Cypress v10
 
+- 📺 [How To Preserve Cookie Once In Cypress v10](https://youtu.be/b8aoVh6IdCg)
+
 ## Install
 
 ```shell
@@ -54,6 +56,10 @@ localStorage.debug = 'cypress-v10-preserve-cookie'
 If you re-run the tests, you should see the messages appear in the console.
 
 ![Show debug messages](./images/debug-cookie.png)
+
+## Examples
+
+- [bahmutov/cypress-v10-preserve-cookie-example](https://github.com/bahmutov/cypress-v10-preserve-cookie-example)
 
 ## Small print
 
