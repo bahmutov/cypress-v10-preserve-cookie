@@ -23,6 +23,8 @@ This module adds a custom command `cy.preserveCookieOnce`
 
 ## Use
 
+### Single cookie
+
 ```js
 // login sets the cookie like "connect.session" for example
 before(loginSomehow)
@@ -39,6 +41,22 @@ it('is logged in', () => {
 it('is still logged in', () => {
   ...
 })
+```
+
+### Multiple cookies
+
+You can pass multiple cookie names
+
+```js
+cy.preserveCookieOnce(
+  'connect.session',
+  'refresh_token',
+  'access_token',
+)
+// equivalent to
+cy.preserveCookieOnce('connect.session')
+cy.preserveCookieOnce('refresh_token')
+cy.preserveCookieOnce('access_token')
 ```
 
 ## Types

@@ -1,5 +1,6 @@
 /// <reference types="cypress" />
 /// <reference path="../../src/index.d.ts" />
+// @ts-check
 
 import '../../src'
 
