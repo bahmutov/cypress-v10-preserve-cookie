@@ -78,6 +78,8 @@ If you re-run the tests, you should see the messages appear in the console.
 ## Examples
 
 - [bahmutov/cypress-v10-preserve-cookie-example](https://github.com/bahmutov/cypress-v10-preserve-cookie-example)
+- preserve a list of cookies by name [all.cy.js](./cypress/e2e/all.cy.js)
+- preserve any cookies set by the application [unknown.cy.js](./cypress/e2e/unknown.cy.js)
 
 ## See also
 
