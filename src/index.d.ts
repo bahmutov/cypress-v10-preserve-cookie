@@ -12,6 +12,6 @@ declare namespace Cypress {
      * @example cy.preserveCookieOnce('connect.sid', 'refresh_token')
      * @see https://github.com/bahmutov/cypress-v10-preserve-cookie
      */
-    preserveCookieOnce(name: string, ...names: string[]): void
+    preserveCookieOnce(...names: string[]): void
   }
 }
