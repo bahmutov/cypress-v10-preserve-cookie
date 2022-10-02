@@ -1,4 +1,4 @@
-# cypress-v10-preserve-cookie ![cypress version](https://img.shields.io/badge/cypress-10.8.0-brightgreen) [![ci](https://github.com/bahmutov/cypress-v10-preserve-cookie/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/bahmutov/cypress-v10-preserve-cookie/actions/workflows/ci.yml)
+# cypress-v10-preserve-cookie ![cypress version](https://img.shields.io/badge/cypress-10.9.0-brightgreen) [![ci](https://github.com/bahmutov/cypress-v10-preserve-cookie/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/bahmutov/cypress-v10-preserve-cookie/actions/workflows/ci.yml)
 
 > Cypress.Cookies.preserveOnce for Cypress v10
 
