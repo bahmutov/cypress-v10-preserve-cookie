@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/bahmutov/cypress-v10-preserve-cookie#readme",
   "devDependencies": {
-    "cypress": "11.2.0",
+    "cypress": "12.0.2",
     "prettier": "^2.7.1",
     "semantic-release": "^19.0.5"
   },
