@@ -1,11 +1,20 @@
 const { defineConfig } = require('cypress')
 
+let galleta
+
 module.exports = defineConfig({
   fixturesFolder: false,
   e2e: {
     supportFile: false,
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+      on('task', {
+        setGalleta: (val) => {
+          return (galleta = val)
+        },
+        getGalleta: () => {
+          return galleta
+        },
+      })
     },
   },
 })

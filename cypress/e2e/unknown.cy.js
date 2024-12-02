@@ -4,35 +4,52 @@
 
 import '../../src'
 
-// let's say we don't know the cookies we want to preserve at first
-// but we know the all start with "x_". We will fill this list later
-const cookieNames = []
+// Ussing the command cy.getCookies you can get all the cookies and with cy.task you can send then to the beforeEach hook.
+// You need to set the cy.task on the cypress.config.js file with:
+/* let galleta
+
+module.exports = defineConfig({
+  fixturesFolder: false,
+  e2e: {
+    supportFile: false,
+    setupNodeEvents(on, config) {
+      on('task', {
+        setGalleta: (val) => {
+          return (galleta = val)
+        },
+        getGalleta: () => {
+          return galleta
+        },
+      })
+    },
+  },
+}) 
+*/
 
 before(() => {
   // pretend the application sets these cookies
   cy.setCookie('x_first', 'a')
   cy.setCookie('x_second', 'b')
   cy.setCookie('x_third', 'c')
-})
 
-beforeEach(() => {
-  cy.getCookies().then((list) => {
-    // find all cookies that start with "x_"
-    const names = list
-      .map((c) => c.name)
-      .filter((name) => name.startsWith('x_'))
-    if (names.length) {
-      cy.log('will preserve cookies', names)
-      cookieNames.push(...names)
-    }
+  //Get all the cookies and store them using the task command
+  cy.getCookies().then((cook) => {
+    let galleta = []
+    cook.forEach((ck) => {
+      galleta.push(ck.name)
+    })
+    cy.task('setGalleta', galleta)
   })
 })
 
 beforeEach(() => {
-  // preserve the cookies, but only if we have the list of them
-  if (cookieNames.length) {
-    cy.preserveCookieOnce(...cookieNames)
-  }
+  //Set all the cookies stored on the before hook.
+  cy.task('getGalleta').then((galleta) => {
+    if (galleta.length) {
+      cy.log('will preserve cookies', galleta)
+      cy.preserveCookieOnce(...galleta)
+    }
+  })
 })
 
 it('has the cookies', () => {
